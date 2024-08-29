@@ -1,4 +1,19 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+// @ts-check
+import withPlaiceholder from '@plaiceholder/next'
+import { hostname } from 'os'
 
-export default nextConfig;
+/**
+ * @type {import('next').NextConfig}
+ */
+const config = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com'
+      }
+    ]
+  }
+}
+
+export default withPlaiceholder(config)
